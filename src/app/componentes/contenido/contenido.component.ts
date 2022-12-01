@@ -8,7 +8,7 @@ import { Alumnos } from 'src/app/alumnos';
 })
 export class ContenidoComponent implements OnInit {
 
-  alumno: Alumnos[] = [
+  estudiantes: Alumnos[] = [
     new Alumnos("Carlos","Acosta","Angular",8.756,"Cursando"),
     new Alumnos("Marcelo","Farias","Angular",6.786,"Cursando"),
     new Alumnos("Pablo","Harillo","Angular",7.678,"Cursando"),

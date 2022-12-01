@@ -1,16 +1,27 @@
 <div class="container">
     <h4>Curso de Angular</h4>
-        <table>
+        <table class="table">
             <thead>
-
+                <tr class="table-info">
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Nota</th>
+                    <th>Estado</th>
+                </tr>
             </thead>
             <tbody>
-                
+                <tr *ngFor="let estudiante of estudiantes"
+                    [ngClass]="{'table-danger':estudiante.estado==='Abandono'}">
+                   <td>{{estudiante.nombre}}</td>
+                   <td>{{estudiante.apellido}}</td>
+                   <td>{{estudiante.nota }}</td>
+                   <td>{{estudiante.estado}}</td>
+                </tr>
             </tbody>
         </table>
     <h4>Curso de Java</h4>
         <table>
-            <thead>
+            <thead class="table-info">
 
             </thead>
             <tbody>
