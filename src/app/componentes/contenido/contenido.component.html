@@ -1,31 +1,40 @@
 <div class="container">
     <h4>Curso de Angular</h4>
-        <table class="table">
-            <thead>
-                <tr class="table-info">
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Nota</th>
-                    <th>Estado</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let estudiante of estudiantes"
-                    [ngClass]="{'table-danger':estudiante.estado==='Abandono'}">
-                   <td>{{estudiante.nombre}}</td>
-                   <td>{{estudiante.apellido}}</td>
-                   <td>{{estudiante.nota }}</td>
-                   <td>{{estudiante.estado}}</td>
-                </tr>
-            </tbody>
-        </table>
+    <table class="table">
+        <thead>
+            <tr class="table-info">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nota</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let estudiante of estudiantes" [ngClass]="{'table-danger':estudiante.estado==='Abandono'}">
+                <td *ngIf="(estudiante.curso == 'Angular')">{{estudiante.nombre | uppercase}}</td>
+                <td *ngIf="(estudiante.curso == 'Angular')">{{estudiante.apellido | uppercase}}</td>
+                <td *ngIf="(estudiante.curso == 'Angular')">{{estudiante.nota | number:'1.0-0' }}</td>
+                <td *ngIf="(estudiante.curso == 'Angular')">{{estudiante.estado}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
     <h4>Curso de Java</h4>
-        <table>
-            <thead class="table-info">
-
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-</div>
+    <table class="table">
+        <thead>
+            <tr class="table-info">
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nota</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let alumno of estudiantes" [ngClass]="{'table-danger':alumno.estado==='Abandono'}">
+                <td *ngIf="(alumno.curso == 'JAVA')">{{alumno.nombre | uppercase}}</td>
+                <td *ngIf="(alumno.curso == 'JAVA')">{{alumno.apellido | uppercase}}</td>
+                <td *ngIf="(alumno.curso == 'JAVA')">{{alumno.nota | number: '1.0-0' }}</td>
+                <td *ngIf="(alumno.curso == 'JAVA')">{{alumno.estado}}</td>
+            </tr>
+        </tbody>
+    </table>
